@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { BoxInput } from "../../components/BoxInput";
 import { ContainerForm, OneLineInputs, ScrollForm } from "./style";
-import axios from "axios";
 import { Alert } from "react-native";
+import axios from "axios";
 
 export const Home = () => {
     // states - variáveis
@@ -19,17 +19,25 @@ export const Home = () => {
             const url = `https://viacep.com.br/ws/${cep}/json/`
 
             try {
-                const promiseGet = await axios.get(url);
+                if (cep != '') {
+                    const promiseGet = await axios.get(url);
 
-                setLogradouro(promiseGet.data.logradouro);
-                setBairro(promiseGet.data.bairro);
-                setCidade(promiseGet.data.localidade);
-                setEstado(promiseGet.data.uf);
-                setUf(promiseGet.data.uf);
+                    setLogradouro(promiseGet.data.logradouro);
+                    setBairro(promiseGet.data.bairro);
+                    setCidade(promiseGet.data.localidade);
+                    setEstado(promiseGet.data.uf);
+                    setUf(promiseGet.data.uf);
+                }
 
             } catch (error) {
                 console.error(`Erro: ${error}`);
                 Alert.alert("Erro ao carregar a API");
+
+                setLogradouro("");
+                setBairro("");
+                setCidade("");
+                setEstado("");
+                setUf("");
             }
         }
 
