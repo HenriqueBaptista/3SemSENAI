@@ -39,7 +39,7 @@ export const Login = () => {
                     source={require("../../assets/icons/googleIcon.png")}
                 /> */}
 
-                <AntDesign name="google" size={18} color="#496BBA" />
+                <AntDesign name="google" size={18}  color="#34898F" />
 
                 <ButtonTitleGoogle>Entrar com Google</ButtonTitleGoogle>
 

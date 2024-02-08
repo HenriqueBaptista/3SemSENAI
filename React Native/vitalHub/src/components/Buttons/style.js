@@ -23,3 +23,14 @@ export const ButtonGoogle = styled(Button)`
 
     background: #FAFAFA;
 `
+export const IconButton = styled.TouchableOpacity`
+    width: 40px;
+    height: 40px;
+
+    gap: 0;
+    margin: 0;
+    padding: 0;
+
+    background-color: none;
+    border: none;
+`

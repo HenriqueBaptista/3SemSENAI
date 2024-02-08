@@ -14,3 +14,10 @@ export const LinkAccount = styled(LinkMedium)`
     font-family: "MontserratAlternates_600SemiBold";
     color: #4D659D;
 `
+
+export const BlueLink = styled(LinkMedium)`
+    margin-left: 0;
+
+    font-family: "MontserratAlternates_600SemiBold";
+    color: #344F8F;
+`
