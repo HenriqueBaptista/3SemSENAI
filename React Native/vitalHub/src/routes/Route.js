@@ -10,6 +10,8 @@ import { RedefinePassword } from "../screens/Login/RedefinePassword";
 import { CreateAccount } from "../screens/Login/CreateAccount";
 import { Login } from "../screens/Login/Login";
 import { VerifyEmail } from "../screens/Login/VerifyEmail";
+import { Profile } from "../screens/Perfil/Profile";
+import { AppointmentUser } from "../screens/Appointment/AppointmentUser";
 
 // Criador de rotas
 const Stack = createNativeStackNavigator();
@@ -38,6 +40,10 @@ export const Route = () => {
                 <Stack.Screen name="RedefinePassword" component={RedefinePassword} options={{ title: "Redefinir senha" }} />
 
                 <Stack.Screen name="CreateAccount" component={CreateAccount} options={{ title: "Criar conta" }} />
+
+                <Stack.Screen name="Profile" component={Profile} options={{ title: "Perfil" }} />
+
+                <Stack.Screen name="AppointmentUser" component={AppointmentUser} options={{ title: "Consultas - Paciente" }} />
 
             </Stack.Navigator>
 

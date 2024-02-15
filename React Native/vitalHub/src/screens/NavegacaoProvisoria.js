@@ -33,6 +33,15 @@ export const Navegacao = ({ navigation }) => {
                 onPress={() => navigation.navigate("CreateAccount")}
             />
 
+            <Button
+                title="Profile"
+                onPress={() => navigation.navigate("Profile")}
+            />
+
+            <Button
+            title="AppointmentUser"
+            onPress={() => navigation.navigate("AppointmentUser")} />
+
         </View>
 
     );

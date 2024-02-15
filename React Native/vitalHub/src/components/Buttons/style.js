@@ -34,3 +34,10 @@ export const IconButton = styled.TouchableOpacity`
     background-color: none;
     border: none;
 `
+
+export const ButtonGray = styled(Button)`
+    background-color: #ACABB7;
+    border: none;
+    margin-bottom: 30px;
+    width: 50%;
+`
