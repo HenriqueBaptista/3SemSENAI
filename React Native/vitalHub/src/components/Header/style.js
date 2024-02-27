@@ -1,48 +1,28 @@
 import styled from "styled-components";
 
-export const Header = styled.View`
-    width: 100%;
-    height: 114px;
+export const BoxUser = styled.View`
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`;
 
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-`
+export const ImageUser = styled.Image`
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+`;
 
-export const UserContent = styled.View`
-    gap: 10px;
-    align-items: center;
-    flex-direction: row;
-`
+export const DataUser = styled.View``;
 
-export const HeaderContent = styled.View`
-    width: 90%;
+export const TextDefault = styled.Text`
+  font-size: 14px;
+  font-family: "Quicksand_500Medium";
+`;
 
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-`
-
-export const TextContent = styled.View`
-    width: 120px;
-    height: 45px;
-
-    flex-direction: column;
-`
-
-export const GrayText = styled.Text`
-    color: #4E4B59;
-    font-family: "Quicksand_500Medium";
-    font-size: 14px;
-`
-
-export const TextUser = styled.Text`
-    color: #FBFBFB;
-    font-family: "MontserratAlternates_600SemiBold";
-    font-size: 16px;
-`
-
-export const ImageHeader = styled.Image`
-    width: 60px;
-    height: 60px;
-`
+export const NameUser = styled.Text`
+  color: #fbfbfb;
+  font-size: 16px;
+  margin-top: 5px;
+  font-family: "MontserratAlternates_600SemiBold";
+`;

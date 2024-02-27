@@ -1,55 +1,43 @@
-import { Container } from "../../components/Container/style";
-import { Logo } from "../../components/Logo/style";
-import { Title } from "../../components/Title/style";
-import { Input } from "../../components/Input/style";
-import { LinkAccount, LinkMedium } from "../../components/LinkMedium/style";
-import { Button, ButtonGoogle } from "../../components/Buttons/style";
-import { ButtonGoogle__Icon } from "../../components/IconsFormat/style";
-import { ContentAccount } from "../../components/Content/style";
-import { TextAccount } from "../../components/Texts/style";
-import { ButtonTitle, ButtonTitleGoogle } from "../../components/ButtonTitle/style";
-import { AntDesign } from '@expo/vector-icons';
+import { Button, ButtonGoogle } from "../../components/Button/Style";
+import {
+  ButtonTitle,
+  ButtonTitleGoogle,
+} from "../../components/ButtonTitle/Style";
+import { Container } from "../../components/Container/Style";
+import { Input } from "../../components/Input/Style";
+import { LinkBold, LinkMedium } from "../../components/Links/Style";
+import { Logo } from "../../components/Logo/Style";
+import { Title } from "../../components/Title/Style";
+import { AntDesign } from "@expo/vector-icons";
+import { ContentAccount, TextAccount } from "./Style";
 
 export const Login = () => {
-    return (
-        <Container>
-            <Logo
-                source={require("../../assets/images/logo.png")}
-            />
+  return (
+    <Container>
+      <Logo source={require("../../assets/logo.png")} />
 
-            <Title>Entrar ou criar conta</Title>
+      <Title>Entrar ou criar conta</Title>
 
-            <Input
-                placeholder="Usuário ou E-mail"
-            />
+      <Input placeholder="Usuário ou E-mail" />
 
-            <Input
-                placeholder="Senha"
-            />
+      <Input placeholder="Senha" secureTextEntry />
 
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+      <LinkMedium>Esqueceu sua senha?</LinkMedium>
 
-            <Button>
-                <ButtonTitle>Entrar</ButtonTitle>
+      <Button>
+        <ButtonTitle>Entrar</ButtonTitle>
+      </Button>
 
-            </Button>
+      <ButtonGoogle>
+        <AntDesign name="google" size={18} color="#496bba" />
+        <ButtonTitleGoogle>Entrar com Google</ButtonTitleGoogle>
+      </ButtonGoogle>
 
-            <ButtonGoogle>
-                {/* <ButtonGoogle__Icon
-                    source={require("../../assets/icons/googleIcon.png")}
-                /> */}
-
-                <AntDesign name="google" size={18}  color="#34898F" />
-
-                <ButtonTitleGoogle>Entrar com Google</ButtonTitleGoogle>
-
-            </ButtonGoogle>
-
-            <ContentAccount>
-                <TextAccount>Não tem conta? <LinkAccount>Crie uma conta agora!</LinkAccount></TextAccount>
-
-            </ContentAccount>
-
-        </Container>
-    )
+      <ContentAccount>
+        <TextAccount>
+          Não tem conta? <LinkBold>Crie uma conta agora!</LinkBold>
+        </TextAccount>
+      </ContentAccount>
+    </Container>
+  );
 };
