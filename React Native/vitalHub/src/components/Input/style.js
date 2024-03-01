@@ -27,3 +27,8 @@ export const InputCode = styled(Input)`
   font-size: 40px;
   margin-top: 20px;
 `;
+
+export const InputModal = styled(Input)`
+  width: 100%;
+  margin-bottom: 145px;
+`

@@ -78,8 +78,7 @@ export const HomePaciente = () => {
                             onPressCancel={() => setShowModalCancel(true)}
                             onPressAppointment={() => setShowModalAppointment(true)}
                         />
-                    )
-                }
+                    )}
             />
 
             <CancellationModal
@@ -98,7 +97,7 @@ export const HomePaciente = () => {
             />
 
             <NewAppointmentButton
-            onPress={() => {setShowModalAddAppointment(true)}}>
+                onPress={() => { setShowModalAddAppointment(true) }}>
                 <FontAwesome6 name="stethoscope" size={26.67} color="#FBFBFB" />
             </NewAppointmentButton>
         </Container>

@@ -7,7 +7,7 @@ export const ButtonTabsStyle = styled.TouchableHighlight`
 
     /* se o botão estiver clicado, aplica-se o fundo azul,caso contrário, fundo transparente*/
     ${props => props.clickButton ? css`
-        background-color: #496bba ;
+        background-color: #496BBA ;
     `: css`
         background-color: transparent;
         border: 2px solid #607EC5;

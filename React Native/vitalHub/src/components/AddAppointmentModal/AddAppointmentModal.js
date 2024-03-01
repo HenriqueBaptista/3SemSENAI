@@ -1,8 +1,10 @@
 import { Modal } from "react-native"
-import { AddAppointmentContent, FilterLevels, ModalContent, ModalLabel } from "./Style"
+import { AddAppointmentContent, BoxToLabel, FilterLevels, ModalContent, ModalLabel, ModalTitle } from "./Style"
 import { Button, ButtonCancel, ButtonSecondaryTitle, ButtonTitle } from "../Button/Style"
 import { AbsListNewAppointment } from "../AbsListNewAppointment/AbsListNewAppointment"
 import { useState } from "react"
+import { Input, InputModal } from "../Input/Style"
+import { SelectClinic } from "../SelectClinic/SelectClinic"
 
 export const AddAppointmentModal = ({
     visible,
@@ -11,36 +13,56 @@ export const AddAppointmentModal = ({
     ...rest
 }) => {
     const [statusLevel, setStatusLevel] = useState("");
+    const [showSelectClinic, setShowSelectClinic] = useState(false);
 
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType='fade'>
             <AddAppointmentContent>
                 <ModalContent>
-                    <ModalLabel>Qual o nível da consulta</ModalLabel>
+                    {/* título */}
+                    <ModalTitle>Agendar consulta</ModalTitle>
 
-                    {/* botões de ajustar nível */}
-                    <FilterLevels>
-                        <AbsListNewAppointment
-                            textButton={"Rotina"}
-                            clickButton={statusLevel === "rotina"}
-                            onPress={() => setStatusLevel("rotina")}
-                        />
+                    {/* box para colocar o botão e a label */}
+                    <BoxToLabel>
+                        {/* label */}
+                        <ModalLabel>Qual o nível da consulta</ModalLabel>
 
-                        <AbsListNewAppointment
-                            textButton={"Exame"}
-                            clickButton={statusLevel === "exame"}
-                            onPress={() => setStatusLevel("exame")}
-                        />
+                        {/* botões de ajustar nível */}
+                        <FilterLevels>
+                            {/* nível rotina */}
+                            <AbsListNewAppointment
+                                textButton={"Rotina"}
+                                clickButton={statusLevel === "rotina"}
+                                onPress={() => setStatusLevel("rotina")}
+                            />
 
-                        <AbsListNewAppointment
-                            textButton={"Urgência"}
-                            clickButton={statusLevel === "urgencia"}
-                            onPress={() => setStatusLevel("urgencia")}
+                            {/* nível exame */}
+                            <AbsListNewAppointment
+                                textButton={"Exame"}
+                                clickButton={statusLevel === "exame"}
+                                onPress={() => setStatusLevel("exame")}
+                            />
+
+                            {/* nível urgência */}
+                            <AbsListNewAppointment
+                                textButton={"Urgência"}
+                                clickButton={statusLevel === "urgencia"}
+                                onPress={() => setStatusLevel("urgencia")}
+                            />
+                        </FilterLevels>
+
+                        {/* label */}
+                        <ModalLabel>Informe a localização desejada</ModalLabel>
+
+                        {/* input */}
+                        <InputModal
+                            placeholder={"Informe a localização"}
                         />
-                    </FilterLevels>
+                    </BoxToLabel>
 
                     {/* botão continuar */}
-                    <Button>
+                    <Button
+                        onPress={() => setShowSelectClinic(true)}>
                         <ButtonTitle>Continuar</ButtonTitle>
                     </Button>
 
@@ -48,6 +70,11 @@ export const AddAppointmentModal = ({
                     <ButtonCancel onPress={() => { setShowModalAddAppointment(false) }}>
                         <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                     </ButtonCancel>
+
+                    <SelectClinic
+                        visible={showSelectClinic}
+                        setShowSelectClinic={setShowSelectClinic}
+                    />
                 </ModalContent>
             </AddAppointmentContent>
         </Modal>
