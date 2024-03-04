@@ -1,15 +1,18 @@
 import { DoctorContainer, DoctorContent, DoctorContentImage, DoctorText, DoctorTitle, DoctorTouchable } from "./Style"
 
-export const DoctorCard = () => {
+export const DoctorCard = ({
+    doctorName,
+    doctorRole,
+}) => {
     return (
         <DoctorContainer>
             <DoctorTouchable>
-                <DoctorContentImage source={{ uri: "https://github.com/HookCreeping.png" }} />
+                <DoctorContentImage source={{ uri: "https://imgb.ifunny.co/images/bfc9bc11c482d1bc9f53bb14458fd0f848c34aed77d84390a234c890d70e7c7f_1.jpg" }} />
 
                 <DoctorContent>
-                    <DoctorTitle>Dra Alessandra</DoctorTitle>
+                    <DoctorTitle>{doctorName}</DoctorTitle>
 
-                    <DoctorText>Demartologa, Esteticista</DoctorText>
+                    <DoctorText>{doctorRole}</DoctorText>
                 </DoctorContent>
             </DoctorTouchable>
         </DoctorContainer>
