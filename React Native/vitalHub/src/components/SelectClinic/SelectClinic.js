@@ -4,6 +4,8 @@ import { Button, ButtonCancel, ButtonSecondaryTitle, ButtonTitle } from "../Butt
 import { Title } from "../Title/Style";
 import { ClinicCard } from "../ClinicCard/ClinicCard";
 import { ListComponent } from "../List/List";
+import { useState } from "react";
+import SelectDoctor from "../SelectDoctor/SelectDoctor";
 
 export const SelectClinic = ({
     visible,
@@ -11,6 +13,8 @@ export const SelectClinic = ({
     setShowSelectClinic,
     ...rest
 }) => {
+    const [showSelectDoctor, setShowSelectDoctor] = useState(false);
+
     const Dados = [
         { id: 0, address: "São Paulo, SP", clinic: "Clínica Natureh", date: "Seg-Sex", rate: "4,5", },
         { id: 1, address: "São Paulo, SP", clinic: "Diamond Pró-Mulher", date: "Seg-Sex", rate: "4,8", },
@@ -38,15 +42,21 @@ export const SelectClinic = ({
                     )}
                 />
 
-                {/* continuar */}
-                <Button>
-                    <ButtonTitle>Continuar</ButtonTitle>
-                </Button>
+                {/* botão continuar */}
+                <Button
+                        onPress={() => setShowSelectDoctor(true)}>
+                        <ButtonTitle>Continuar</ButtonTitle>
+                    </Button>
 
                 {/* cancelar */}
                 <ButtonCancel onPress={() => setShowSelectClinic(false)}>
                     <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                 </ButtonCancel>
+
+                <SelectDoctor
+                visible={showSelectDoctor}
+                setShowSelectDoctor={setShowSelectDoctor}
+                />
             </SelectClinicContent>
         </Modal >
     )
