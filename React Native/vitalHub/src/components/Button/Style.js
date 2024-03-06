@@ -10,6 +10,7 @@ export const Button = styled.TouchableOpacity`
 
     margin-top: 15px ;
     padding: 12px 8px 12px 8px ;
+    margin-bottom: 20px;
 
     align-items: center ;
     justify-content:center ;
@@ -69,4 +70,11 @@ export const NewAppointmentButton = styled.TouchableOpacity`
   bottom: 60px;
   right: -35%;
   border-radius: 7px;
+`
+
+export const ButtonLogout = styled(Button)`
+  width: 50%;
+
+  border: #ACABB7;
+  background-color: #ACABB7;
 `

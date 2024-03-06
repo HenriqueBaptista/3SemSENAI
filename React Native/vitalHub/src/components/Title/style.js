@@ -12,6 +12,7 @@ export const Subtitle = styled.Text`
   color: #5f5c6b;  
   font-size: 16px;
   margin-top: 15px;
+  margin-bottom: 20px;
 
   align-self: center;
   text-align: center;

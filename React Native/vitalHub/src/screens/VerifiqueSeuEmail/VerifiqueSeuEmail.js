@@ -9,7 +9,7 @@ import { Button, ButtonSecondary, ButtonTitle } from "../../components/Button/St
 import { ButtonSecondaryTitle } from "../../components/ButtonTitle/Style";
 import { InputCode } from "../../components/Input/Style";
 
-export const VerifiqueSeuEmail = () => {
+export const VerifiqueSeuEmail = ({ navigation }) => {
   return (
     <Container>
       <ContainerLogo>
@@ -18,8 +18,7 @@ export const VerifiqueSeuEmail = () => {
             name="arrowleft"
             size={30}
             color="#34898F"
-            onPress={() => {
-            }}
+            onPress={() => { navigation.replace("Recuperar Senha") }}
           />
         </ContentLogo>
 
@@ -31,20 +30,20 @@ export const VerifiqueSeuEmail = () => {
       <Subtitle>Digite o código de 4 dígitos enviado para <EmailText>username@email.com</EmailText> </Subtitle>
 
       <ContainerBox>
-        <InputCode keyboardType="numeric" placeholder="0" maxLength={1}/>
-        <InputCode keyboardType="numeric" placeholder="0" maxLength={1}/>
-        <InputCode keyboardType="numeric" placeholder="0" maxLength={1}/>
-        <InputCode keyboardType="numeric" placeholder="0" maxLength={1}/>
+        <InputCode keyboardType="numeric" placeholder="0" maxLength={1} />
+        <InputCode keyboardType="numeric" placeholder="0" maxLength={1} />
+        <InputCode keyboardType="numeric" placeholder="0" maxLength={1} />
+        <InputCode keyboardType="numeric" placeholder="0" maxLength={1} />
       </ContainerBox>
 
-      <Button onPress={() => {}}>
+      <Button onPress={() => { navigation.replace("Redefinir Senha") }}>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
- 
+
       <ButtonSecondary>
         <ButtonSecondaryTitle>Reenviar código</ButtonSecondaryTitle>
       </ButtonSecondary>
-      
+
     </Container>
   );
 };

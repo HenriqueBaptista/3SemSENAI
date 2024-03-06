@@ -52,6 +52,8 @@ export const ContainerImage = styled.View`
 export const ContainerFlex = styled.View`
   width: 90%;
 
+  margin-bottom: 30px;
+
   flex-direction: row;
   align-self: center;
   justify-content: space-between;

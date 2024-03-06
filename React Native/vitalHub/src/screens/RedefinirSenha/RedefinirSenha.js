@@ -7,7 +7,7 @@ import { Input } from "../../components/Input/Style";
 import { Button } from "../../components/Button/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 
-export const RedefinirSenha = () => {
+export const RedefinirSenha = ({ navigation }) => {
   return (
     <Container>
       <ContainerLogo>
@@ -16,7 +16,7 @@ export const RedefinirSenha = () => {
             name="arrowleft"
             size={30}
             color="#34898F"
-            onPress={() => {}}
+            onPress={() => { navigation.replace("Verifique seu e-mail") }}
           />
         </ContentLogo>
 
@@ -30,7 +30,7 @@ export const RedefinirSenha = () => {
       <Input placeholder="Nova Senha" secureTextEntry={true} />
       <Input placeholder="Confirme nova senha" secureTextEntry={true} />
 
-      <Button onPress={() => {}}>
+      <Button onPress={() => { navigation.replace("Login") }}>
         <ButtonTitle>Confirmar nova senha</ButtonTitle>
       </Button>
     </Container>

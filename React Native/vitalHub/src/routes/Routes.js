@@ -8,6 +8,7 @@ import { VerifiqueSeuEmail } from "../screens/VerifiqueSeuEmail/VerifiqueSeuEmai
 import { RecuperarSenha } from "../screens/RecuperarSenha/RecuperarSenha";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomePaciente } from "../screens/HomePaciente/HomePaciente";
+import { Main } from "../screens/Main/Main"
 
 //instância do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -21,16 +22,6 @@ export const Routes = () => {
             {/* componente para navegação */}
             <Stack.Navigator>
 
-                {/* tela */}
-                <Stack.Screen
-                    // nome da tela
-                    name="Navegacao"
-                    //componente que será chamado
-                    component={Navegacao}
-                    //título da tela
-                    options={{ title: "Navegação" }}
-                />
-
                 <Stack.Screen
                     // nome da tela
                     name="Login"
@@ -39,6 +30,21 @@ export const Routes = () => {
                     //título da tela
                     options={{ title: "Login" }}
                 />
+                
+                <Stack.Screen
+                    name="Main"
+                    component={Main}
+                />
+
+                {/* tela
+                <Stack.Screen
+                    // nome da tela
+                    name="Navegacao"
+                    //componente que será chamado
+                    component={Navegacao}
+                    //título da tela
+                    options={{ title: "Navegação" }}
+                /> */}
 
                 <Stack.Screen
                     name="Recuperar Senha"
@@ -70,10 +76,10 @@ export const Routes = () => {
                     options={{ title: "Home" }}
                 />
 
-                <Stack.Screen 
+                <Stack.Screen
                     name="Home Paciente"
                     component={HomePaciente}
-                    options={{title: "Home Paciente"}}
+                    options={{ title: "Home Paciente" }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

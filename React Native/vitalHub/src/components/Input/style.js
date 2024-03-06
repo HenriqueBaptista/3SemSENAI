@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Input = styled.TextInput.attrs({
-    placeholderTextColor: '#34898f'
+  placeholderTextColor: '#34898f'
 })`
     width: 90% ;
     height: 53px ;
@@ -31,4 +31,24 @@ export const InputCode = styled(Input)`
 export const InputModal = styled(Input)`
   width: 100%;
   margin-bottom: 145px;
+`
+
+export const InputSmall = styled(Input)`
+  width: 144px;
+`
+
+export const InputGray = styled(Input).attrs({
+  placeholderTextColor: '#33303E'
+})`
+  background-color: #F5F3F3;
+  border: #F5F3F3;
+  margin: 5px;
+`
+
+export const InputGraySmall = styled(InputSmall).attrs({
+  placeholderTextColor: '#33303E'
+})`
+  background-color: #F5F3F3;
+  border: #F5F3F3;
+  margin: 5px;
 `

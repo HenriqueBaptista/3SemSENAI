@@ -13,7 +13,7 @@ export default SelectDoctor = ({
     setShowSelectDoctor,
     ...rest
 }) => {
-    const [showSelectDate, setShowSelectDate] = useState()
+    const [showSelectDate, setShowSelectDate] = useState(false)
 
     const Dados = [
         { id: 0, doctorName: "Jão Sena", doctorRole: "Urologista" },
@@ -49,7 +49,7 @@ export default SelectDoctor = ({
                 </Button>
 
                 {/* cancelar */}
-                <ButtonCancel onPress={() => setShowSelectDate(false)}>
+                <ButtonCancel onPress={() => setShowSelectDoctor(false)}>
                     <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                 </ButtonCancel>
 

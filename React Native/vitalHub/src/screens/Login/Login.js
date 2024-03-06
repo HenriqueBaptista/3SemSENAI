@@ -1,8 +1,5 @@
 import { Button, ButtonGoogle } from "../../components/Button/Style";
-import {
-  ButtonTitle,
-  ButtonTitleGoogle,
-} from "../../components/ButtonTitle/Style";
+import { ButtonTitle, ButtonTitleGoogle, } from "../../components/ButtonTitle/Style";
 import { Container } from "../../components/Container/Style";
 import { Input } from "../../components/Input/Style";
 import { LinkBold, LinkMedium } from "../../components/Links/Style";
@@ -11,7 +8,11 @@ import { Title } from "../../components/Title/Style";
 import { AntDesign } from "@expo/vector-icons";
 import { ContentAccount, TextAccount } from "./Style";
 
-export const Login = () => {
+export const Login = ({ navigation }) => {
+  async function Login() {
+    navigation.navigate("Main")
+  }
+
   return (
     <Container>
       <Logo source={require("../../assets/logo.png")} />
@@ -22,9 +23,9 @@ export const Login = () => {
 
       <Input placeholder="Senha" secureTextEntry />
 
-      <LinkMedium>Esqueceu sua senha?</LinkMedium>
+      <LinkMedium onPress={() => navigation.replace("Recuperar Senha")}>Esqueceu sua senha?</LinkMedium>
 
-      <Button>
+      <Button onPress={(e) => Login()}>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
 
@@ -35,7 +36,7 @@ export const Login = () => {
 
       <ContentAccount>
         <TextAccount>
-          Não tem conta? <LinkBold>Crie uma conta agora!</LinkBold>
+          Não tem conta? <LinkBold onPress={() => navigation.replace("Cadastro")}>Crie uma conta agora!</LinkBold>
         </TextAccount>
       </ContentAccount>
     </Container>
