@@ -13,13 +13,20 @@ import {
   TextBold,
   ViewRow,
 } from "./Style";
+import { useState } from "react";
 
 export const AppointmentCard = ({
   situacao = "pendente",
   onPressCancel,
   onPressAppointment,
+  navigation,
+  onConnectAppointment,
+  onConnectCancelar
 }) => {
+  const [profile, setProfile] = useState()
+
   return (
+
     // container principal
     <ContainerCardsList>
       {/* imagem de perfil */}
@@ -49,24 +56,23 @@ export const AppointmentCard = ({
             </TextBold>
           </ClockCard>
 
-            {/* valida e mostra o tipo de botão conforme a situação */}
+          {/* valida e mostra o tipo de botão conforme a situação */}
 
-            {
-                situacao == "cancelado" ? (
-                    <>
-                    </>
-                ) : situacao == "pendente" ? (
-                    <ButtonCard onPress={onPressCancel}>
-                        <ButtonText situacao={situacao}>Cancelar</ButtonText>
-                    </ButtonCard>
-                ) : (
-                    <ButtonCard onPress={onPressAppointment}>
-                        <ButtonText situacao={situacao}>Ver Prontuário</ButtonText>
-                    </ButtonCard>
-                )
-            }
+          {
+            situacao == 'cancelado'
+              ? (
+                <></>
+              ) : situacao == 'pendente' ? (
+                <ButtonCard onPress={onConnectCancelar}>
+                  <ButtonText situacao={situacao}>Cancelar</ButtonText>
+                </ButtonCard>
+              ) : (
+                <ButtonCard onPress={profile !== "paciente" ? onConnectAppointment : () => navigation.replace("Paciente Prontuario")}>
+                  <ButtonText situacao={situacao}>Ver prontuário</ButtonText>
+                </ButtonCard>
+              )
+          }
 
-          
         </ViewRow>
       </ContentCard>
     </ContainerCardsList>

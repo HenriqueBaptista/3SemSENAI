@@ -18,7 +18,7 @@ const Consultas = [
   { id: 5, nome: "Carlos", situacao: "cancelado" },
 ];
 
-export const Home = () => {
+export const Home = ({ navigation }) => {
   const [statusLista, setStatusLista] = useState("pendente");
 
   // State para os modais
@@ -30,8 +30,8 @@ export const Home = () => {
       <StatusBar />
 
       {/* Header */}
-      <Header 
-      nome={"Dr. Creepo"}
+      <Header
+        nome={"Dr. Creepo"}
       />
 
       {/* Calendar */}
@@ -73,6 +73,7 @@ export const Home = () => {
               situacao={item.situacao}
               onPressCancel={() => setShowModalCancel(true)}
               onPressAppointment={() => setShowModalAppointment(true)}
+              navigation={navigation}
             />
           )
         }

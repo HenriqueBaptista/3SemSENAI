@@ -11,9 +11,15 @@ export default SelectDoctor = ({
     visible,
     navigation,
     setShowSelectDoctor,
+    tipoConsulta,
+    endereco,
+    clinica,
     ...rest
 }) => {
     const [showSelectDate, setShowSelectDate] = useState(false)
+
+    const [doutor, setDoutor] = useState("")
+    const [role, setRole] = useState("")
 
     const Dados = [
         { id: 0, doctorName: "Jão Sena", doctorRole: "Urologista" },
@@ -36,6 +42,7 @@ export default SelectDoctor = ({
                     renderItem={({ item }) => (
                         // card médico
                         <DoctorCard
+                            onPress={() => {setDoutor(item.doctorName), setRole(item.doctorRole)}}
                             doctorName={item.doctorName}
                             doctorRole={item.doctorRole}
                         />
@@ -57,6 +64,12 @@ export default SelectDoctor = ({
                 <SelectDate
                     visible={showSelectDate}
                     setShowSelectDate={setShowSelectDate}
+                    navigation={navigation}
+                    tipoConsulta={tipoConsulta}
+                    endereco={endereco}
+                    clinica={clinica}
+                    doutor={doutor}
+                    role={role}
                 />
             </SelectDoctorContainer>
         </Modal >

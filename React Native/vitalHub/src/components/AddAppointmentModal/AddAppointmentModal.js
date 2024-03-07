@@ -13,7 +13,16 @@ export const AddAppointmentModal = ({
     ...rest
 }) => {
     const [statusLevel, setStatusLevel] = useState("");
+    const [endereco, setEndereco] = useState("")
     const [showSelectClinic, setShowSelectClinic] = useState(false);
+
+    const RequireToPass = (s, a) => {
+        if (s === "" || a === "") {
+            return null;
+        } else {
+            setShowSelectClinic(true)
+        }
+    }
 
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType='fade'>
@@ -57,12 +66,13 @@ export const AddAppointmentModal = ({
                         {/* input */}
                         <InputModal
                             placeholder={"Informe a localização"}
+                            onChangeText={newText => setEndereco(newText)}
                         />
                     </BoxToLabel>
 
                     {/* botão continuar */}
                     <Button
-                        onPress={() => setShowSelectClinic(true)}>
+                        onPress={() => RequireToPass(statusLevel, endereco)}>
                         <ButtonTitle>Continuar</ButtonTitle>
                     </Button>
 
@@ -74,6 +84,10 @@ export const AddAppointmentModal = ({
                     <SelectClinic
                         visible={showSelectClinic}
                         setShowSelectClinic={setShowSelectClinic}
+                        navigation={navigation}
+                        tipoConsulta={statusLevel}
+                        endereco={endereco}
+                        setShowModalAddAppointment={setShowModalAddAppointment}
                     />
                 </ModalContent>
             </AddAppointmentContent>

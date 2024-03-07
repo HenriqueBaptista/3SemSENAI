@@ -3,7 +3,11 @@ import { Title } from "../Title/Style";
 import { ButtonModal, ButtonSecondary, ButtonSecondaryTitle, ButtonTitle } from "../Button/Style";
 import { ModalContent, ModalText, PatientModal } from "./Style";
 
-export const CancellationModal = ({ visible, setShowModalCancel, ...rest }) => {
+export const CancellationModal = ({
+  visible,
+  navigation,
+  setShowModalCancel,
+  ...rest }) => {
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
       <PatientModal>

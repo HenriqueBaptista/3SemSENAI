@@ -28,7 +28,7 @@ export const Main = () => {
                 tabBarShowLabel: false,
                 headerShown: false,
                 tabBarIcon: ({ focused }) => {
-                    if (route.name === "Home") {
+                    if (route.name === "Home Paciente") {
                         return (
                             <ContentIcon
                                 tabBarActiveBackgroundColor={focused ? "#ECF2FF" : "transparent"}

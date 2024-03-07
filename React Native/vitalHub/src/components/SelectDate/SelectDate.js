@@ -5,14 +5,24 @@ import { SelectDateContainer } from "./Style"
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { StyledSelect } from "../Select/Style";
 import { ContainerFlex } from "../Container/Style";
+import { ConfirmAppointment } from "../ConfirmAppointment/ConfirmAppointment";
+import { useState } from "react";
 
 
 export const SelectDate = ({
     visible,
     navigation,
     setShowSelectDate,
+    tipoConsulta,
+    endereco,
+    clinica,
+    doutor,
+    role,
     ...rest
 }) => {
+    const [showConfirmAppointment, setShowConfirmAppointment] = useState(false)
+
+    // data atual
     const currentDate = new Date();
 
     //define a data inicial
@@ -45,7 +55,7 @@ export const SelectDate = ({
                 {/* select */}
                 <StyledSelect
                     onValueChange={(value) => console.log(value)}
-                    placeholder={{label: "Selecione um horário disponível", value: "default"}}
+                    placeholder={{ label: "Selecione um horário disponível", value: "default" }}
                     items={[
                         { label: "5:00", value: "5am" },
                         { label: "6:00", value: "6am" },
@@ -68,7 +78,7 @@ export const SelectDate = ({
 
                 {/* botão continuar */}
                 <Button
-                    onPress={() => setShowSelectDate(true)}>
+                    onPress={() => setShowConfirmAppointment(true)}>
                     <ButtonTitle>Continuar</ButtonTitle>
                 </Button>
 
@@ -76,6 +86,18 @@ export const SelectDate = ({
                 <ButtonCancel onPress={() => setShowSelectDate(false)}>
                     <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                 </ButtonCancel>
+
+                {/* confirmar tudo */}
+                <ConfirmAppointment
+                    visible={showConfirmAppointment}
+                    setShowConfirmAppointment={setShowConfirmAppointment}
+                    navigation={navigation}
+                    tipoConsulta={tipoConsulta}
+                    endereco={endereco}
+                    clinica={clinica}
+                    doutor={doutor}
+                    role={role}
+                />
             </SelectDateContainer>
         </Modal >
     )

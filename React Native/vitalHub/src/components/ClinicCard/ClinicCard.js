@@ -4,6 +4,7 @@ import { ContainerCard, ContentCard, ExtraContainer, Rate, TextCard, TitleCard }
 import { Fontisto } from '@expo/vector-icons';
 
 export const ClinicCard = ({
+    onPress,
     date,
     clinic,
     address,
@@ -11,7 +12,7 @@ export const ClinicCard = ({
 }) => {
     return (
         <ExtraContainer>
-            <ContainerCard>
+            <ContainerCard onPress={onPress}>
                 <ContentCard>
                     <TitleCard>{clinic}</TitleCard>
 

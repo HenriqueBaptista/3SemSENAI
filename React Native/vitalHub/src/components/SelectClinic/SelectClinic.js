@@ -11,9 +11,15 @@ export const SelectClinic = ({
     visible,
     navigation,
     setShowSelectClinic,
+    setShowModalAddAppointment,
+    statusLevel,
+    tipoConsulta,
+    endereco,
     ...rest
 }) => {
     const [showSelectDoctor, setShowSelectDoctor] = useState(false);
+
+    const [clinica, setClinica] = useState("");
 
     const Dados = [
         { id: 0, address: "São Paulo, SP", clinic: "Clínica Natureh", date: "Seg-Sex", rate: "4,5", },
@@ -21,6 +27,8 @@ export const SelectClinic = ({
         { id: 2, address: "Toboão, SP", clinic: "Clinica Villa Lobos", date: "Seg-Sab", rate: "4,2", },
         { id: 3, address: "Taboão, SP", clinic: "SP Oncologia Clínica", date: "Seg-Sab", rate: "4,2", },
     ];
+
+    console.log(clinica);
 
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType='fade'>
@@ -34,6 +42,7 @@ export const SelectClinic = ({
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
                         <ClinicCard
+                            onPress={() => setClinica(item.clinic)}
                             address={item.address}
                             clinic={item.clinic}
                             date={item.date}
@@ -44,18 +53,22 @@ export const SelectClinic = ({
 
                 {/* botão continuar */}
                 <Button
-                        onPress={() => setShowSelectDoctor(true)}>
-                        <ButtonTitle>Continuar</ButtonTitle>
-                    </Button>
+                    onPress={() => setShowSelectDoctor(true)}>
+                    <ButtonTitle>Continuar</ButtonTitle>
+                </Button>
 
                 {/* cancelar */}
-                <ButtonCancel onPress={() => setShowSelectClinic(false)}>
+                <ButtonCancel onPress={() => { setShowSelectClinic(false), setShowModalAddAppointment(false) }}>
                     <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                 </ButtonCancel>
 
                 <SelectDoctor
-                visible={showSelectDoctor}
-                setShowSelectDoctor={setShowSelectDoctor}
+                    visible={showSelectDoctor}
+                    setShowSelectDoctor={setShowSelectDoctor}
+                    navigation={navigation}
+                    tipoConsulta={tipoConsulta}
+                    endereco={endereco}
+                    clinica={clinica}
                 />
             </SelectClinicContent>
         </Modal >
