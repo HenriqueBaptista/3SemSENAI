@@ -28,8 +28,6 @@ export const SelectClinic = ({
         { id: 3, address: "Taboão, SP", clinic: "SP Oncologia Clínica", date: "Seg-Sab", rate: "4,2", },
     ];
 
-    console.log(clinica);
-
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType='fade'>
             <SelectClinicContent>

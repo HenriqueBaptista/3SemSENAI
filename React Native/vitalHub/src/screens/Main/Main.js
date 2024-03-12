@@ -37,7 +37,17 @@ export const Main = () => {
                                 {focused && <TextIcon>Agenda</TextIcon>}
                             </ContentIcon>
                         )
-                    } else {
+                    } else if (route.name === "Home") {
+                        return (
+                            <ContentIcon
+                                tabBarActiveBackgroundColor={focused ? "#ECF2FF" : "transparent"}
+                            >
+                                <FontAwesome name="calendar" size={18} color="#4E4B59" />
+                                {focused && <TextIcon>Agenda (Médico)</TextIcon>}
+                            </ContentIcon>
+                        )
+                    }
+                    else {
                         return (
                             <ContentIcon
                                 tabBarActiveBackgroundColor={focused ? "#ECF2FF" : "transparent"}
@@ -54,6 +64,11 @@ export const Main = () => {
             <BottomTab.Screen
                 name="Home Paciente"
                 component={HomePaciente}
+            />
+
+            <BottomTab.Screen
+                name="Home"
+                component={Home}
             />
 
             <BottomTab.Screen

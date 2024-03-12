@@ -3,7 +3,7 @@ import { AppointmentContent, ModalContent, ModalImage, RowTextModal, TextModal }
 import { Title } from "../Title/Style";
 import { ButtonCancel, ButtonModal, ButtonSecondaryTitle, ButtonTitle } from "../Button/Style";
 
-export const AppointmentModal = ({ navigation, visible, setShowModalAppointment, typeProfile = 'paciente', ...rest }) => {
+export const AppointmentModal = ({ navigation, visible, setShowModalAppointment, onPressAppointment, onPressCancel, typeProfile = 'paciente', ...rest }) => {
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType='fade'>
       <AppointmentContent>
@@ -18,11 +18,11 @@ export const AppointmentModal = ({ navigation, visible, setShowModalAppointment,
             <TextModal>joão.oliveira@gmail.com</TextModal>
           </RowTextModal>
 
-          <ButtonModal onPress={() => { setShowModalAppointment(false) }}>
+          <ButtonModal onPress={() => { setShowModalAppointment(true) }}>
             <ButtonTitle>Prontuário </ButtonTitle>
           </ButtonModal>
 
-          <ButtonCancel onPress={() => setShowModalAppointment(false)}>
+          <ButtonCancel onPress={() => setShowModalAppointment(true)}>
             <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
           </ButtonCancel>
         </ModalContent>
