@@ -16,7 +16,7 @@ const BottomTab = createBottomTabNavigator();
 export const Main = () => {
     return (
         <BottomTab.Navigator
-            initialRouteName="Home Paciente"
+            initialRouteName="Home"
 
             screenOptions={({ route }) => ({
                 tabBarStyle: {
@@ -28,7 +28,7 @@ export const Main = () => {
                 tabBarShowLabel: false,
                 headerShown: false,
                 tabBarIcon: ({ focused }) => {
-                    if (route.name === "Home Paciente") {
+                    if (route.name === "Home") {
                         return (
                             <ContentIcon
                                 tabBarActiveBackgroundColor={focused ? "#ECF2FF" : "transparent"}
@@ -37,13 +37,13 @@ export const Main = () => {
                                 {focused && <TextIcon>Agenda</TextIcon>}
                             </ContentIcon>
                         )
-                    } else if (route.name === "Home") {
+                    } else if (route.name === "Home Paciente") {
                         return (
                             <ContentIcon
                                 tabBarActiveBackgroundColor={focused ? "#ECF2FF" : "transparent"}
                             >
                                 <FontAwesome name="calendar" size={18} color="#4E4B59" />
-                                {focused && <TextIcon>Agenda (Médico)</TextIcon>}
+                                {focused && <TextIcon>Agenda (Paciente)</TextIcon>}
                             </ContentIcon>
                         )
                     }
@@ -62,13 +62,13 @@ export const Main = () => {
         >
 
             <BottomTab.Screen
-                name="Home Paciente"
-                component={HomePaciente}
+                name="Home"
+                component={Home}
             />
 
             <BottomTab.Screen
-                name="Home"
-                component={Home}
+                name="Home Paciente"
+                component={HomePaciente}
             />
 
             <BottomTab.Screen

@@ -18,7 +18,10 @@ const Consultas = [
   { id: 5, nome: "Carlos", situacao: "cancelado" },
 ];
 
-export const Home = ({ navigation }) => {
+export const Home = ({
+  navigation,
+  userRole,
+}) => {
   const [statusLista, setStatusLista] = useState("pendente");
 
   // State para os modais

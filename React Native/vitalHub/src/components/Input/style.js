@@ -38,11 +38,12 @@ export const InputSmall = styled(Input)`
 `
 
 export const InputGray = styled(Input).attrs({
-  placeholderTextColor: '#33303E'
+  placeholderTextColor: '#33303E',
 })`
   background-color: #F5F3F3;
   border: #F5F3F3;
   margin: 5px;
+  color: #33303E;
 `
 
 export const InputGraySmall = styled(InputSmall).attrs({
@@ -51,4 +52,5 @@ export const InputGraySmall = styled(InputSmall).attrs({
   background-color: #F5F3F3;
   border: #F5F3F3;
   margin: 5px;
+  color: #33303E;
 `

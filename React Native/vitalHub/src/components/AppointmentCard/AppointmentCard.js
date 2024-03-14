@@ -20,10 +20,8 @@ export const AppointmentCard = ({
   onPressCancel,
   onPressAppointment,
   navigation,
-  onConnectAppointment,
-  onConnectCancelar
 }) => {
-  const [profile, setProfile] = useState()
+  const [profile, setProfile] = useState();
 
   return (
 
@@ -63,16 +61,15 @@ export const AppointmentCard = ({
               ? (
                 <></>
               ) : situacao == 'pendente' ? (
-                <ButtonCard onPress={onConnectCancelar}>
+                <ButtonCard onPress={onPressCancel}>
                   <ButtonText situacao={situacao}>Cancelar</ButtonText>
                 </ButtonCard>
               ) : (
-                <ButtonCard onPress={profile !== "paciente" ? onConnectAppointment : () => navigation.replace("Paciente Prontuario")}>
+                <ButtonCard onPress={profile !== "paciente" ? onPressAppointment : () => navigation.replace("Paciente Prontuario")}>
                   <ButtonText situacao={situacao}>Ver prontuário</ButtonText>
                 </ButtonCard>
               )
           }
-
         </ViewRow>
       </ContentCard>
     </ContainerCardsList>
