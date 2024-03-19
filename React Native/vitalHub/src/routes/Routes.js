@@ -9,6 +9,7 @@ import { RecuperarSenha } from "../screens/RecuperarSenha/RecuperarSenha";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomePaciente } from "../screens/HomePaciente/HomePaciente";
 import { Main } from "../screens/Main/Main"
+import { ProntuarioPaciente } from "../screens/ProntuarioPaciente/ProntuarioPaciente";
 
 //instância do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -30,7 +31,7 @@ export const Routes = () => {
                     //título da tela
                     options={{ title: "Login" }}
                 />
-                
+
                 <Stack.Screen
                     name="Main"
                     component={Main}
@@ -80,6 +81,12 @@ export const Routes = () => {
                     name="Home Paciente"
                     component={HomePaciente}
                     options={{ title: "Home Paciente" }}
+                />
+
+                <Stack.Screen
+                    name="Prontuario Paciente"
+                    component={ProntuarioPaciente}
+                    options={{ title: "Prontuario Paciente" }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

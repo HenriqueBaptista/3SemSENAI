@@ -14,11 +14,10 @@ export default function App() {
 
   /*
   DESAFIOS
-  1 - Quando salvar a foto e clicar na lixeira - remover a galeria
-  2 - Permitir a foto com flash
-  3 - Botão para recarregar o autofocus
-  4 - Capturar e salvar vídeos 
-
+  1 - Quando salvar a foto e clicar na lixeira - remover a galeria.
+  2 - Permitir a foto com flash.
+  3 - Botão para recarregar o autofocus.
+  4 - Capturar e salvar vídeos.
   */
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function App() {
 
       const { status: mediaStatus } = await MediaLibrary.requestPermissionsAsync();
     })()
-  }, [])
+  }, []);
 
   async function UploadPhoto() {
     await MediaLibrary.createAssetAsync(photo)

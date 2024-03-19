@@ -4,6 +4,7 @@ import { Title } from "../Title/Style";
 import { ButtonCancel, ButtonModal, ButtonSecondaryTitle, ButtonTitle } from "../Button/Style";
 import { useState } from "react";
 import { AppointmentPlace } from "../AppointmentPlace/AppointmentPlace";
+import { RecordModal } from "../RecordModal/RecordModal";
 
 export const AppointmentModal = ({
   navigation,
@@ -14,6 +15,7 @@ export const AppointmentModal = ({
   typeProfile = 'paciente',
   ...rest }) => {
   const [showPlacement, setShowPlacement] = useState(false);
+  const [showMedicRecord, setShowMedicRecord] = useState(false);
 
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType='fade'>
@@ -33,6 +35,10 @@ export const AppointmentModal = ({
             <ButtonTitle>Ver local da consulta</ButtonTitle>
           </ButtonModal>
 
+          <ButtonModal onPress={() => { setShowMedicRecord(true) }}>
+            <ButtonTitle>Ver prontuario</ButtonTitle>
+          </ButtonModal>
+
           <ButtonCancel onPress={() => setShowModalAppointment(false)}>
             <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
           </ButtonCancel>
@@ -41,6 +47,12 @@ export const AppointmentModal = ({
           <AppointmentPlace
             visible={showPlacement}
             setShowPlacement={setShowPlacement}
+          />
+
+          {/* ver prontuario */}
+          <RecordModal
+            visible={showMedicRecord}
+            setShowMedicRecord={setShowMedicRecord}
           />
 
         </ModalContent>

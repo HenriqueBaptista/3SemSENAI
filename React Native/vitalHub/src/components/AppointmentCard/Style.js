@@ -61,4 +61,6 @@ export const ButtonText = styled.Text`
     color: ${(props) => props.situacao == "pendente" ? "#c81d25" : "#344f8f"} ;
 `
 
+export const Flex = styled.View`
 
+`

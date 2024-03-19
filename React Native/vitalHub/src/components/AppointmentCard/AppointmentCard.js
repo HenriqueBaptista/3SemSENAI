@@ -11,6 +11,7 @@ import {
   ProfileName,
   TextAge,
   TextBold,
+  setProfile,
   ViewRow,
 } from "./Style";
 import { useState } from "react";
@@ -21,7 +22,7 @@ export const AppointmentCard = ({
   onPressAppointment,
   navigation,
 }) => {
-  const [profile, setProfile] = useState();
+  const [profile, setProfile] = useState("");
 
   return (
 
@@ -65,7 +66,8 @@ export const AppointmentCard = ({
                   <ButtonText situacao={situacao}>Cancelar</ButtonText>
                 </ButtonCard>
               ) : (
-                <ButtonCard onPress={profile !== "paciente" ? onPressAppointment : () => navigation.replace("Paciente Prontuario")}>
+
+                <ButtonCard onPress={profile !== "paciente" ? onPressAppointment : () => navigation.replace("Prontuario Paciente")}>
                   <ButtonText situacao={situacao}>Ver prontuário</ButtonText>
                 </ButtonCard>
               )

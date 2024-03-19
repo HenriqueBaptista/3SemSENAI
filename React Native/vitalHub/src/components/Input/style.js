@@ -39,7 +39,10 @@ export const InputSmall = styled(Input)`
 
 export const InputGray = styled(Input).attrs({
   placeholderTextColor: '#33303E',
+  multiline: true,
 })`
+  height: auto;
+
   background-color: #F5F3F3;
   border: #F5F3F3;
   margin: 5px;
