@@ -37,7 +37,6 @@ export default function App() {
       content: {
         title: "Bem vindo ao SENAI!",
         body: "Notificação recebida",
-        sound: 'mySound.wav'
       },
       trigger: null,
     })
